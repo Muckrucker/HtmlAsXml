@@ -1,0 +1,3 @@
+HtmlAsXml - Used to take a web page's html content and convert it into an xmlDocument to allow further manipulation and eventually external class generation for use in automation.
+
+.toXml() - Takes the current page, removes some items we're not interesting in parsing, and converts the html into an xmldoc.
