@@ -1,9 +1,9 @@
 ﻿/*! jQuery v1.7.2 jquery.com | jquery.org/license */
 //load jQuery 1.7.2.min
-//jQueryScript = window.document.getElementsByTagName("body")[0].appendChild(document.createElement("script"));
-//jQueryScript.setAttribute("language", "javascript");
-//jQueryScript.setAttribute("type", "text/javascript");
-//jQueryScript.setAttribute("src", "http://code.jquery.com/jquery-1.7.2.min.js");
+jQueryScript = window.document.getElementsByTagName("body")[0].appendChild(document.createElement("script"));
+jQueryScript.setAttribute("language", "javascript");
+jQueryScript.setAttribute("type", "text/javascript");
+jQueryScript.setAttribute("src", "http://code.jquery.com/jquery-1.7.2.min.js");
 
 /* 
  * DOMParser HTML extension 
