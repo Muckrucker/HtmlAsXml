@@ -1,9 +1,9 @@
-﻿/*! jQuery v1.7.2 jquery.com | jquery.org/license */
-//load jQuery 1.7.2.min
+/*! jQuery v1.10.2 jquery.com | jquery.org/license */
+//load jQuery 1.10.2.min
 jQueryScript = window.document.getElementsByTagName("body")[0].appendChild(document.createElement("script"));
 jQueryScript.setAttribute("language", "javascript");
 jQueryScript.setAttribute("type", "text/javascript");
-jQueryScript.setAttribute("src", "http://code.jquery.com/jquery-1.7.2.min.js");
+jQueryScript.setAttribute("src", "http://code.jquery.com/jquery-1.10.2.min.js");
 
 /* 
  * DOMParser HTML extension 
@@ -219,7 +219,7 @@ HtmlAsXml = function () {
 
     //simple string contains method, avoiding adding this to the String.prototype in case of fires
     var _stringContains = function (str, contains) {
-        return str.indexOf(contains) != -1;
+        return str.indexOf(contains) !== -1;
     };
 
     //tries to retrieve the inner text of an element
@@ -231,7 +231,7 @@ HtmlAsXml = function () {
         try {
             //check for any internal text on a given element, ie 'foo' in <a>foo</a> 
             //see: http://stackoverflow.com/questions/6520192/get-text-node-of-an-element
-            text = _htmlEncode(window.$(elem).contents().filter(function () { return nodeType == 3; }).text());
+            text = _htmlEncode(window.$(elem).contents().filter(function () { return this.nodeType === 3; }).text());
         } catch (exp) {
             //if something went awry trying to parse/process the text content, just set it to an empty string
             console.log("Failed to retrieve the innertext content of an element: " + elem);
@@ -252,6 +252,6 @@ HtmlAsXml = function () {
         //converts the html of the current page into an xml document
         toXml: function () {
             return _fixFormatting();
-        },
+        }
     };
 }();
