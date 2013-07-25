@@ -196,7 +196,7 @@ HtmlAsXml = function () {
     };
 
     //iterates through the parent level nodes and fixes their tags
-    var _fixFormatting = function () {
+    var _fixFormatting = function (type) {
         //boil down the html a bit
         _myHtml = _getHtml();
 
@@ -213,8 +213,14 @@ HtmlAsXml = function () {
             //attempt to recurse the html string into a valid xml-format string
             htmlDoc = _recurseElementFix(body.childNodes[1]);
         }
-        //return the finished html doc as an xml doc
-        return new DOMParser().parseFromString(htmlDoc, "text/xml");
+        
+        if (type === 'doc') {
+            //return the finished html doc as an xml doc
+            return new DOMParser().parseFromString(htmlDoc, "text/xml");
+        } else if (type === 'string') {
+            //return the finished html doc as an xml doc compatible string
+            return htmlDoc;
+        }
     };
 
     //simple string contains method, avoiding adding this to the String.prototype in case of fires
@@ -251,7 +257,11 @@ HtmlAsXml = function () {
     return {
         //converts the html of the current page into an xml document
         toXml: function () {
-            return _fixFormatting();
+            return _fixFormatting("doc");
+        },
+        //converts the html of the current page into an xml document compatible string
+        toXmlString: function () {
+            return _fixFormatting("string");  
         }
     };
 }();
