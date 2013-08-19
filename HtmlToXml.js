@@ -48,6 +48,16 @@ jQueryScript.setAttribute("src", "http://code.jquery.com/jquery-1.10.2.min.js");
     };
 }(DOMParser));
 
+/* 
+ * HtmlAsXml javascript
+ * 2013-08-19 
+ * 
+ * By Stephen McCusker, https://github.com/Muckrucker/
+ * Public domain. 
+ * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK. 
+ */
+
+/*! @source https://github.com/Muckrucker/HtmlAsXml */
 HtmlAsXml = function () {
     //private members
     var _myHtml = null;
